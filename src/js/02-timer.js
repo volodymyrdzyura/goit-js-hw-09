@@ -21,16 +21,16 @@ const day = hour * 24;
 // ------------------------------------------------------------візуальне оформлення лічильника------------------------
 timer.style.display = 'flex';
 
-for (key of value) {
+for (let key of value) {
   key.style.fontSize = '30px';
 }
 
-for (key of field) {
+for (let key of field) {
   key.style.marginRight = '20px';
   key.style.textAlign = 'center';
 }
 
-for (key of label) {
+for (let key of label) {
   key.style.display = 'block';
 }
 buttonStart.disabled = true; //-------кнопка стане активна після вибору правильної дати
