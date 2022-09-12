@@ -2,7 +2,7 @@
 import flatpickr from 'flatpickr';
 // Дополнительный импорт стилей
 import 'flatpickr/dist/flatpickr.min.css';
-const flatpickr = require('flatpickr');
+// const flatpickr = require('flatpickr');
 
 const calendar = document.querySelector('#datetime-picker');
 const buttonStart = document.querySelector('[data-start]');
@@ -71,13 +71,9 @@ const options = {
 
           function convertMs(ms) {
             //--------------------ф-я формування часу ХХ:ХХ:ХХ
-            // Remaining days
             const days = Math.floor(ms / day);
-            // Remaining hours
             const hours = Math.floor((ms % day) / hour);
-            // Remaining minutes
             const minutes = Math.floor(((ms % day) % hour) / minute);
-            // Remaining seconds
             const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
             function addLeadingZero(days, hours, minutes, seconds) {
