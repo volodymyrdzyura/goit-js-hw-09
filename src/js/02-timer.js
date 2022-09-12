@@ -33,9 +33,8 @@ for (key of field) {
 for (key of label) {
   key.style.display = 'block';
 }
-// ------------------------------------------------------робота з календарем-------------------------------
 buttonStart.disabled = true; //-------кнопка стане активна після вибору правильної дати
-
+// ------------------------------------------------------робота з календарем-------------------------------
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -58,9 +57,13 @@ const options = {
             const currentTime = Date.now();
             let difference = choosenTime - currentTime;
             const clockTime = convertMs(difference);
+            //-----умова припинення роботи лічильника
             if (difference < 999) {
-              //-----умова припинення роботи лічильника
               clearInterval(intervalId);
+              dy.textContent = '00'; //------Запобіжник, який виправляє баг із мінусовими цифрами якщо після досягнення 00:00:00 натиснути кнопку start
+              hr.textContent = '00';
+              min.textContent = '00';
+              sec.textContent = '00';
               return;
             }
           }, 1000);
