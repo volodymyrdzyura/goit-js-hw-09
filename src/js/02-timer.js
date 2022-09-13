@@ -34,7 +34,6 @@ for (let key of field) {
 for (let key of label) {
   key.style.display = 'block';
 }
-buttonStart.disabled = true; //-------кнопка стане активна після вибору правильної дати
 // ------------------------------------------------------робота з календарем-------------------------------
 const options = {
   enableTime: true,
@@ -50,8 +49,9 @@ const options = {
       return;
     }
     buttonStart.disabled = false; //---------активація кнопки
-
+    
     buttonStart.addEventListener('click', function setTime() {
+      buttonStart.disabled = true; //-------кнопка стане активна після вибору правильної дати
       const timeCounter = {
         start() {
           const intervalId = setInterval(() => {

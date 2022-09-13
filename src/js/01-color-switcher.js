@@ -10,11 +10,11 @@ buttonStart.addEventListener('click', onStartClick);
 
 function onStartClick() {
   timerId = setInterval(changeColor, interval);
+  buttonStart.disabled = true;
 }
 
 function changeColor() {
   body.style.backgroundColor = `${getRandomHexColor()}`;
-  buttonStart.disabled = true;
   buttonStop.disabled = false;
 }
 
